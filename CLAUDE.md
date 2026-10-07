@@ -24,4 +24,4 @@ Read README.md and docs/README.md, then the relevant product requirements, archi
 
 ## Current state
 
-The product vision and Version 1 scope are approved in docs/product/PRODUCT_VISION.md. The approved actors, roles and access model is in docs/security/ACTORS_ROLES_AND_ACCESS.md. Identity, accounts and authentication are the next analysis. Detailed architecture, technology choices, module specifications and implementation are not approved by this file.
+The product vision and Version 1 scope are approved in docs/product/PRODUCT_VISION.md. The approved actors, roles and access model is in docs/security/ACTORS_ROLES_AND_ACCESS.md. The approved identity, accounts and authentication specification is in [docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md](docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md). Main user journeys are the next analysis. Detailed architecture, technology choices, module specifications and implementation are not approved by this file.
