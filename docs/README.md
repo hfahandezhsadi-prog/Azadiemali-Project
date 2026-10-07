@@ -15,14 +15,13 @@
 | decisions/ | Architecture decision records |
 | delivery/ | Roadmap, scoped tasks and current handoff |
 | operations/ | Deployment, monitoring, backup, recovery and runbooks |
-| migration/ | Legacy source register and review/transfer history |
 | templates/ | Reusable specification templates |
 
 Directories are created when their first reviewed document is added.
 
 ## Document conventions
 
-Every substantive document must identify its status (Draft, Approved or Superseded), owner, last review date, scope, sources and open questions. Record implementation status separately, with evidence and verification date. Approval of a design does not imply deployment.
+Every substantive document must identify its status (Draft, Approved or Superseded), owner, last review date, scope and open questions. Record implementation status separately, with evidence and verification date. Approval of a design does not imply deployment.
 
 Requirements have stable IDs, such as CONS-001. Link requirements to relevant decisions, delivery tasks and acceptance tests. Do not renumber IDs when removing a requirement.
 
