@@ -9,7 +9,7 @@ Prerequisite: [Platform vision and Version 1 scope](../product/PRODUCT_VISION.md
 
 This document defines the platform's people, organizations, roles and access model and provides the basis for analyzing permissions in each domain.
 
-Registration, login identifiers, authentication, account recovery and invitation mechanics will be specified in a separate Identity, Accounts and Authentication document. That document has not yet been created.
+Registration, login identifiers, authentication, account recovery and invitation mechanics are defined in the approved [Identity, Accounts and Authentication specification](IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md).
 
 ## 2. Core Concepts
 
@@ -194,7 +194,7 @@ Version 1 uses roles, inheritance and scopes for restrictions. Independent perso
 - Public registration cannot grant working or administrative roles.
 - Stopping working access does not necessarily delete the person's customer account or information.
 
-Execution details will be defined in the Identity and Accounts specification.
+Execution details are defined in the [Identity, Accounts and Authentication specification](IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md).
 
 ## 13. Access Enforcement and Auditing
 
@@ -207,7 +207,7 @@ Role changes and access revocations must be reflected in system authorization. T
 ## 14. Document Relationships and Further Analysis
 
 - This model depends on the two-portal scope in the [Product Vision](../product/PRODUCT_VISION.md).
-- The future Identity, Accounts and Authentication specification will define account creation and login based on this model.
+- The [Identity, Accounts and Authentication specification](IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md) defines account creation and login based on this model.
 - Each module specification will define its operational permissions and data scopes and link to this document.
 - Initial role permission details will evolve as module analysis is completed; this document's principles remain their baseline.
 - [Ownership terminology](../architecture/OWNERSHIP_TERMINOLOGY.md) defines ownership titles; this document defines their access responsibilities.
