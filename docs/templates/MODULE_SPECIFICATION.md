@@ -3,7 +3,6 @@
 Status: Draft
 Owner: <Owner>
 Last reviewed: <YYYY-MM-DD>
-Sources: <Document links and immutable source references>
 
 ## 1. Purpose and Scope
 
