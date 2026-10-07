@@ -179,7 +179,7 @@ Detailed analysis will determine which capabilities also need a shared portal vi
 The domains described above are within Version 1 scope. The depth of each domain's capabilities will be determined through dedicated analysis. Inclusion of a domain does not imply delivery of every advanced capability.
 
 This document does not finalize:
-- Detailed roles and permissions.
+- Detailed domain permission catalogs and role-to-permission mappings; the foundational model is defined in [Actors, Roles and Access](../security/ACTORS_ROLES_AND_ACCESS.md).
 - Advanced education and accounting capability levels.
 - The choice of an existing or custom CRM.
 - A specific accounting software integration.
@@ -208,7 +208,7 @@ Dedicated documents will be prepared where needed. No document is created or upd
 
 Scope changes and additional capabilities remain possible, subject to review and approval.
 
-The next analysis is actors, roles and access. Subsequent analysis follows user journeys, overall architecture, module specifications, data and integration contracts, then delivery and acceptance testing.
+The [actors, roles and access model](../security/ACTORS_ROLES_AND_ACCESS.md) is approved. The next analysis is identity, accounts and authentication. Subsequent analysis follows user journeys, overall architecture, module specifications, data and integration contracts, then delivery and acceptance testing.
 
 ## 10. Document Dependencies
 
