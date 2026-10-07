@@ -43,11 +43,4 @@ This purpose establishes the intended direction. It does not by itself determine
 
 This document describes reviewed business context and intended product direction. It makes no claim that the proposed capabilities have been implemented or deployed.
 
-## Source
-
-Legacy repository: hfahandezhsadi-prog/financial-freedom-platform
-Commit: 548339b44790785347c5d34012b95b1190a4a270
-Path: docs/architecture/BUSINESS_CONTEXT_AND_CAPABILITY_BASELINE_V0_1.md
-Sections: 1, 2 and 10, with explicitly approved revisions.
-
 Ownership terminology is maintained separately in docs/architecture/OWNERSHIP_TERMINOLOGY.md.
