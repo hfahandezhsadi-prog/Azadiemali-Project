@@ -30,7 +30,8 @@ Requirements have stable IDs, such as CONS-001. Link requirements to relevant de
 | Order | Specification | Status |
 |---|---|---|
 | 1 | [Platform vision and Version 1 scope](product/PRODUCT_VISION.md) | Approved |
-| 2 | Actors, roles and access model | Next analysis; not yet created |
+| 2 | [Actors, roles and access model](security/ACTORS_ROLES_AND_ACCESS.md) | Approved; domain permission details follow module analysis |
+| 2A | Identity, accounts and authentication | Next analysis; not yet created |
 | 3 | Main user journeys | Planned; not yet created |
 | 4 | Overall architecture and module boundaries | Planned; not yet created |
 | 5 | Dedicated module specifications | Planned; not yet created |
