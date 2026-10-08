@@ -2,7 +2,6 @@
 
 Status: Approved — product vision and scope; detailed specifications remain subject to review.
 Owner: Product Owner
-Last reviewed: 2026-10-07
 
 ## Platform Languages
 
@@ -107,7 +106,7 @@ Processes, documents and responsibilities require dedicated analysis.
 
 Manage customers, employees, consultants, instructors and collaborating individuals or companies, together with their information and relationship to the business.
 
-Account structure, roles, permissions and collaboration processes will be defined through dedicated analysis.
+The menu contains Customer Management, Collaborator Management, Role Management and Access Management. Collaborator Management includes employees and external Specialists and Partner Companies. [Customer Management](../modules/CUSTOMER_MANAGEMENT.md) is approved; remaining sections require their own analysis. Contacts/leads with neither an account nor a purchase remain in CRM, including their list/search, and are excluded from customer-management results.
 
 ### 5.2. Product Catalog and Pricing
 
@@ -208,9 +207,11 @@ Dedicated documents will be prepared where needed. No document is created or upd
 
 Scope changes and additional capabilities remain possible, subject to review and approval.
 
-The [actors, roles and access model](../security/ACTORS_ROLES_AND_ACCESS.md) is approved. The next analysis is identity, accounts and authentication. Subsequent analysis follows user journeys, overall architecture, module specifications, data and integration contracts, then delivery and acceptance testing.
+The [actors, roles and access model](../security/ACTORS_ROLES_AND_ACCESS.md) is approved. The [identity and authentication specification](../security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md) and [Customer Management](../modules/CUSTOMER_MANAGEMENT.md) are approved. Continue theoretical analysis one management/staff module at a time, then customer-facing sections. Detailed architecture, data/integration contracts and delivery follow the necessary approved analysis; do not substitute a mandatory user-journey-first sequence.
 
 ## 10. Document Dependencies
+
+The [data protection and privacy baseline for Germany](../security/DATA_PROTECTION_AND_PRIVACY.md) applies to all current and future modules. Necessary fields, compulsory accounts, communications, retention and suppliers require their actual legal assessment before affected launch. Product intent is not proof of legal compliance.
 
 This document is the product scope entry point and has no prerequisite specification.
 
