@@ -22,6 +22,10 @@ Read README.md and docs/README.md, then the relevant product requirements, archi
 - Never commit credentials, tokens, personal customer records or private operational evidence. This repository is public.
 - Follow the user's explicit task scope. Do not deploy, apply production migrations or change external systems without authorization.
 
+## Privacy review
+
+Apply [Data Protection and Privacy — Germany](docs/security/DATA_PROTECTION_AND_PRIVACY.md) to every new or amended specification. Complete PRIV-020 applicability, source, decision and evidence review. Recheck current official EU/German law and regulator guidance where relevant. Do not present approved design as legally certified or technically implemented. Do not override legal retention, lawful communication eligibility or purpose-based access through administrator confirmation. Keep unresolved legal blockers explicit before affected real-data launch.
+
 ## Current state
 
-The product vision and Version 1 scope are approved in docs/product/PRODUCT_VISION.md. The approved actors, roles and access model is in docs/security/ACTORS_ROLES_AND_ACCESS.md. The approved identity, accounts and authentication specification is in [docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md](docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md). Main user journeys are the next analysis. Detailed architecture, technology choices, module specifications and implementation are not approved by this file.
+The product vision and Version 1 scope are approved in docs/product/PRODUCT_VISION.md. The approved actors, roles and access model is in docs/security/ACTORS_ROLES_AND_ACCESS.md. The approved identity, accounts and authentication specification is in [docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md](docs/security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md). The approved [Customer Management specification](docs/modules/CUSTOMER_MANAGEMENT.md) defines the first detailed management module. Continue separate theoretical management/staff-module analysis before customer-facing modules. Detailed architecture, technology choices, module specifications and implementation are not approved by this file.
