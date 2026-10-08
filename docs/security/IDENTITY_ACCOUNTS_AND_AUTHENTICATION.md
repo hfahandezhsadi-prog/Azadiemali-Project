@@ -4,7 +4,7 @@
 **Document date:** 2026-10-07
 **Status:** Approved — requirements; operational parameters remain to be specified.
 **Owner:** Product Owner
-**Last reviewed:** 2026-10-07
+**Last reviewed:** 2026-10-08
 **Scope:** Registration, activation, authentication, environment switching, account recovery, and initial owner setup.
 **Open questions:** Exact code/link lifetimes, attempt limits, session durations, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
 **Implementation status:** Not verified. Approval of these requirements does not establish implementation, testing, or deployment.
@@ -18,6 +18,8 @@ This document defines account creation, activation, sign-in, recovery, and accou
 Authority to create users, invite collaborators, and assign roles is governed by the Actors, Roles, and Access specification.
 
 - Each person has one user account and may simultaneously be a customer and hold one or more work roles.
+- Shared identity and authentication do not merge customer and collaborator records. Their relationships, operational records, and financial records remain logically separate. Physical database placement is a later architecture decision.
+- For an account with an active staff or collaborator relationship, staff/collaborator authentication and recovery requirements take precedence for the shared account, including when the person chooses the customer environment. Platform Owner safeguards remain applicable and must not be weakened.
 - Recording a person in the CRM, creating a sign-in account, and granting a role are three separate operations.
 - A person recorded in the CRM or through a bot does not automatically receive an account or access.
 - The verified email address is the identifier used for password-based sign-in. Each account also has a stable internal identifier that does not change when its email address changes.
@@ -229,7 +231,7 @@ There is one shared sign-in page for customers, staff, and collaborators.
 - Password-based sign-in uses the verified email address.
 - After authentication, the system reads the account's active relationships, roles, and permissions.
 - Customer or staff status must not be inferred from the appearance or domain of the email address.
-- Accounts with both types of access receive an environment selection.
+- Accounts with both types of access receive an environment selection after satisfying the applicable shared-account authentication policy. The system must determine that policy from registered relationships before granting access; email appearance and the selected environment must not determine a weaker policy.
 - A sign-in method does not itself create a role or permission.
 
 ## 8. Language Selection [AUTH-008]
@@ -242,6 +244,8 @@ There is one shared sign-in page for customers, staff, and collaborators.
 - Language selection does not affect roles, permissions, or security requirements.
 
 ## 9. Customer Sign-In Methods [AUTH-009]
+
+This section's customer policy applies to customer-only accounts. If the account also has an active staff or collaborator relationship, Section 10 governs authentication for the shared account, including customer-panel access.
 
 | Method | Required verification |
 | --- | --- |
@@ -325,11 +329,13 @@ Customers and staff may enable passkeys from their account security panel.
 | --- | --- |
 | Customer only | Open the customer panel after required authentication checks |
 | Staff/collaborator only | Open the work panel after required work authentication checks |
-| Both environments | Display environment selection and enforce the chosen environment's requirements before granting access |
+| Both environments | Satisfy staff/collaborator authentication requirements for the shared account, then display environment selection; choosing the customer environment must not lower the security policy |
 
 For a person who is both a customer and a staff member:
 
 - One account and its existing sign-in methods are used; no separate account or password is required.
+- While a staff or collaborator relationship is active, its authentication policy applies before either environment is opened. Customer registration or customer-panel selection must not bypass staff activation, authentication, or recovery safeguards.
+- Customer and collaborator operational and financial records remain separate. A work role does not authorize access to other customers' information from the person's customer panel.
 - At initial sign-in, successful authentication that already satisfies work requirements does not require an immediate duplicate MFA challenge merely because the person selects the work panel.
 - The customer panel shows only that person's own customer information and services.
 - The work panel shows information and functions authorized by the person's active work roles and scopes.
@@ -358,6 +364,8 @@ Secure reauthentication is required for:
 An active session alone is insufficient. Authentication does not replace authorization; both must be satisfied.
 
 ## 17. Customer Password Recovery [AUTH-017]
+
+This self-service process applies only to customer-only accounts. Accounts with an active staff or collaborator relationship must use Section 18 for password reset, even if the request originates from a customer-facing page. Ownership protections in Section 6 take precedence for Platform Owner accounts.
 
 1. The person requests recovery using the registered email address.
 2. The system sends a single-use, expiring link.
@@ -409,6 +417,7 @@ Rules:
 - Recovery must be audited, notified to the account holder, and accompanied by necessary session revocation.
 - Replacement security methods must be verified after recovery.
 - Required evidence, authorized reviewers, and manual review steps must be defined in the operational recovery design. Undefined or ambiguous recovery is not permitted.
+- An account with an active staff or collaborator relationship must use the staff/collaborator recovery policy regardless of the entry page or selected environment. Customer recovery must not serve as a weaker alternative.
 - Owner recovery follows the additional requirements in Section 6.
 
 ## 20. Session Management and Abuse Prevention [AUTH-020]
@@ -418,6 +427,7 @@ Rules:
 - Sessions have expiration and inactivity limits; exact values are defined in the technical design.
 - Role revocation, access expiration, and work suspension must affect existing sessions as well as future sign-ins.
 - Closing work access does not necessarily remove customer access.
+- Security policy must be reevaluated when relationships or work access change, including for existing sessions. Revoking one work role or suspending work access must not by itself switch the shared account to customer-only recovery while an active staff/collaborator relationship remains. Owner safeguards continue to take precedence.
 - Sign-in attempts, code guesses, recovery requests, and SMS/email sends must be limited.
 - Limits must not enable easy, permanent denial of access to another person's account.
 - Suspicious behavior may trigger additional security checks.
