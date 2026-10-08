@@ -21,7 +21,7 @@ Directories are created when their first reviewed document is added.
 
 ## Document conventions
 
-Every substantive document must identify its status (Draft, Approved or Superseded), owner, last review date, scope and open questions. Record implementation status separately, with evidence and verification date. Approval of a design does not imply deployment.
+Every substantive document must identify its status (Draft, Approved or Superseded), owner, scope and open questions. These unreleased specifications do not require update dates or version-history entries. Record implementation status separately, with evidence and verification date. Approval of a design does not imply deployment.
 
 Requirements have stable IDs, such as CONS-001. Link requirements to relevant decisions, delivery tasks and acceptance tests. Do not renumber IDs when removing a requirement.
 
@@ -32,9 +32,10 @@ Requirements have stable IDs, such as CONS-001. Link requirements to relevant de
 | 1 | [Platform vision and Version 1 scope](product/PRODUCT_VISION.md) | Approved |
 | 2 | [Actors, roles and access model](security/ACTORS_ROLES_AND_ACCESS.md) | Approved; domain permission details follow module analysis |
 | 2A | [Identity, accounts and authentication](security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md) | Approved; operational parameters and recovery procedures require implementation analysis |
-| 3 | Main user journeys | Planned; not yet created |
-| 4 | Overall architecture and module boundaries | Planned; not yet created |
-| 5 | Dedicated module specifications | Planned; not yet created |
+| 2B | [Data protection and privacy — Germany](security/DATA_PROTECTION_AND_PRIVACY.md) | Approved baseline; applicability, operating decisions and evidence remain open |
+| 3 | [Customer Management](modules/CUSTOMER_MANAGEMENT.md) | Approved; source-domain definitions and legal/operating parameters remain open |
+| 4 | Remaining management and staff modules, then customer-facing sections | Separate theoretical analysis and approval required |
+| 5 | Overall architecture, module boundaries and relevant user journeys | Planned; detailed decisions not yet approved |
 | 6 | Data, API, event and integration contracts | Planned; not yet created |
 | 7 | Delivery plan and acceptance testing | Planned; not yet created |
 
@@ -55,4 +56,4 @@ Existing supporting documents:
 
 ## Reading Order
 
-Start with the product vision, then read completed actors/access definitions, relevant user journeys, architecture, the applicable module specification and contracts, and finally the delivery task and acceptance criteria.
+Start with the product vision, actors/access, identity and privacy baseline; then the applicable approved module and any completed prerequisites. Analyze each management/staff section separately before customer-facing sections. Read approved architecture/contracts and delivery criteria when they exist. Every new or changed specification must complete the privacy review in PRIV-020; unresolved legal launch blockers must remain explicit.
