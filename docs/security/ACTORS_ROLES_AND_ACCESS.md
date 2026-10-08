@@ -2,7 +2,6 @@
 
 Status: Approved — actor and access model; domain permission catalogs require dedicated module analysis.
 Owner: Product Owner
-Last reviewed: 2026-10-07
 Prerequisite: [Platform vision and Version 1 scope](../product/PRODUCT_VISION.md)
 
 ## 1. Purpose and Scope
@@ -27,7 +26,7 @@ A relationship type or job title alone does not grant permissions. Access is det
 
 ## 3. One Account and Multiple Roles
 
-Each person has one login account and may hold multiple roles, for example instructor, consultant and customer simultaneously.
+Each person has one login account and may hold multiple roles, for example instructor, consultant and customer simultaneously. Shared identity/authentication does not merge customer and collaborator operational or financial records. Work authentication/recovery takes precedence while an active collaborator relationship remains, as defined in the identity specification.
 
 A collaborating company does not use a shared account. Its representatives log in with personal accounts so that responsibility for each action is identifiable. Each representative's access scope is assigned separately.
 
@@ -61,7 +60,7 @@ The following safeguards are mandatory and must be implemented and tested:
 - Business Manager and ordinary administrators cannot remove, restrict or replace Platform Owner.
 - Ownership assignment or transfer is a separate operation under the owner's authority.
 - Removing or deactivating the last active Platform Owner is prohibited.
-- Full authority does not permit bypassing data integrity rules or making changes without audit records.
+- Full authority does not permit bypassing data integrity rules or making changes without audit records. It does not override purpose limitation, lawful processing, data minimization or statutory retention.
 
 ### 5.2. Business Manager
 
@@ -197,6 +196,10 @@ Version 1 uses roles, inheritance and scopes for restrictions. Independent perso
 Execution details are defined in the [Identity, Accounts and Authentication specification](IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md).
 
 ## 13. Access Enforcement and Auditing
+
+The [data protection baseline](DATA_PROTECTION_AND_PRIVACY.md) applies to every role, including Platform Owner and Business Manager. Permission is not a legal basis to process data. Default and delegated access must be justified by purpose and limited to necessary records/fields.
+
+[Customer Management](../modules/CUSTOMER_MANAGEMENT.md) defines this module's permission catalog, initial-role defaults and scope. Full customer deletion is reserved to Platform Owner or Business Manager; custom roles and inheritance cannot bypass this process constraint or owner/retention safeguards.
 
 Access controls apply to operations, data, files, reports, search, notifications and exports.
 
