@@ -7,6 +7,7 @@
 **Open questions:** Exact code/link lifetimes, attempt limits, session durations, registration reminder schedule and limits, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
 **Implementation status:** Not verified. Approval of these requirements does not establish implementation, testing, or deployment.
 **Prerequisites:** [Actors, Roles, and Access](ACTORS_ROLES_AND_ACCESS.md) and [Platform vision and Version 1 scope](../product/PRODUCT_VISION.md).
+**Privacy baseline:** [Data protection and privacy requirements — Germany](DATA_PROTECTION_AND_PRIVACY.md) applies to all collection, communications, telemetry, recovery and lifecycle operations.
 **Requirement identifiers:** Each numbered section is a stable requirement group, `AUTH-001` through `AUTH-023`; its subordinate rules belong to that group. These IDs must be preserved and used when linking future decisions, tasks, and acceptance tests.
 
 ## 1. Purpose and Foundational Principles [AUTH-001]
@@ -79,15 +80,15 @@ Rules:
 ### 2.3. Incomplete Registration and Completion Reminders
 
 - A person who has started registration but has not completed the required steps remains in an incomplete-registration state and must not be treated as an active customer.
-- The system sends automatic email reminders to complete registration. The exact schedule and maximum number of reminders are configurable operational parameters to be finalized; 24 and 48 hours after registration starts are proposed initial timings, not fixed approved values.
+- The system supports automatic email reminders to complete registration, enabled only after the documented legal-basis and UWG assessment required by the privacy baseline. The exact schedule and maximum number of reminders are configurable operational parameters to be finalized; 24 and 48 hours after registration starts are proposed initial timings, not fixed approved values.
 - An authorized administrator may manually trigger the same reminder process from incomplete-registration management.
 - Automatic and manual reminders share delivery logic, resend limits, and duplicate-send protection. The administrator must see the last reminder time before sending another.
-- Immediately before dispatch, the system must check that registration is still incomplete and eligible for a reminder. Scheduled reminders must be canceled when registration is completed.
+- Immediately before dispatch, the system must check that registration is still incomplete and eligible for a reminder. Scheduled reminders must be canceled when registration is completed or lawful eligibility otherwise ends; this includes relevant objection or deletion.
 - Reminders direct the person to their remaining registration step without repeating completed steps unnecessarily. Continuation links must not bypass email verification, MFA enrollment, or other security requirements. Expired verification steps require fresh valid verification.
-- Reminder messages are operational registration messages and must not contain promotional content.
+- Reminder messages are intended solely for the relevant registration process and must not contain promotional content. That label is not proof of legal eligibility: assess the actual message/context under GDPR and UWG; incomplete registration does not establish marketing consent. Email-opening trackers are outside the approved design.
 - Authorized administrators can view reminder counts, last-send time, automatic/manual origin, sending administrator where applicable, pending/sent/failed outcomes, and confirmed delivery only when supported by reliable provider evidence.
 - Reminder history records the remaining registration steps at sending time, subsequent registration progress, and final completion time where applicable. Completion after a reminder must not be represented as proof that the reminder caused completion.
-- Retention and cleanup rules for abandoned registration attempts are to be defined separately; this requirement does not authorize automatic deletion.
+- Retention and cleanup rules for abandoned registration attempts and reminder history must be specified under the privacy baseline before real-data launch; this requirement alone does not choose a retention duration or deletion schedule.
 - Reminder visibility, manual sending, and access to registration information require explicit permissions and respect data scope.
 
 ## 3. Customer Profile Completion [AUTH-003]
@@ -97,9 +98,9 @@ First name, last name, and a verified email address must be present before norma
 | Additional information | Requirement |
 | --- | --- |
 | Mobile phone number | Optional |
-| Purpose of using or collaborating with the platform | Optional |
-| Description of personal circumstances | Optional |
-| Information specific to a service | Collected when that service is requested |
+| Information specific to a service | Deferred to that service's approved analysis; collect only when necessary |
+
+Do not expand initial profile collection to biographies, objectives, addresses or bank details in this specification. Additional fields are deferred to domain analysis. The necessity of registration fields and compulsory accounts must be assessed per actual service before launch under the privacy baseline.
 
 Financial, family, or employment information must not be mandatory solely to create a general account. Each service collects the information necessary for its own process.
 
@@ -135,14 +136,14 @@ Inviters may grant only roles and scopes they are authorized to delegate. Public
 | --- | --- |
 | First name | Required |
 | Last name | Required |
-| Personal email address | Required |
-| Personal mobile phone number | Required |
+| Individual registered email address | Required |
+| Registered mobile number suitable for mandatory SMS activation/recovery | Required |
 | Work role or roles | According to responsibilities |
 | Access scope | According to roles and assignments |
 | Partner organization relationship | Where applicable |
 | Access end date | Where applicable |
 
-The authorized administrator enters required information in advance. The person may add optional profile information later.
+The authorized administrator enters required information in advance. The person may add approved optional profile information later. A mandatory SMS channel does not automatically require an employee's private phone: assess necessity and employment-law conditions and provide an appropriate employer-provided number/device or approved operational arrangement where needed. Contact data must not be reused for marketing merely because it supports activation.
 
 ### 5.3. Initial Activation
 
@@ -448,6 +449,8 @@ Rules:
 
 ## 21. Security Notifications and Audit [AUTH-021]
 
+Security telemetry and audit require defined purpose, minimization, restricted access and retention under the privacy baseline. Work activity must not be silently repurposed as employee performance monitoring. Passkeys use local authenticator verification; the platform must not collect biometric templates for this feature.
+
 Important events must be recorded, with relevant events notified to the user, including:
 
 - Account activation.
@@ -476,7 +479,7 @@ Rules:
 - Ending one relationship must not automatically delete another.
 - Removing a work role must not automatically delete the person or historical records.
 - Full account suspension blocks all sign-in methods.
-- Data deletion follows privacy, retention, and applicable requirements defined in the relevant specification.
+- Data deletion follows the [privacy baseline](DATA_PROTECTION_AND_PRIVACY.md) and relevant domain retention/dependency rules. Administrative confirmation cannot override legal preservation. Customer-management deletion is reserved to Platform Owner or Business Manager, within scope and protected-owner safeguards; see [Customer Management](../modules/CUSTOMER_MANAGEMENT.md).
 - Reregistration must not bypass suspension or create duplicate identities.
 
 ## 23. Related Documents and Operational Details [AUTH-023]
@@ -484,7 +487,7 @@ Rules:
 - Roles, administrator authority, and owner safeguards come from the Actors, Roles, and Access specification.
 - Sign-in, registration, activation, and recovery page layouts are defined in the UI specification.
 - Each module defines its own permissions and sensitive operations.
-- Data retention and deletion are defined in the privacy specification.
+- Data retention, lawful collection/communications, individual rights and deletion are governed by the [privacy baseline](DATA_PROTECTION_AND_PRIVACY.md). Category-specific operating decisions must be completed before affected launch.
 - Exact link/code lifetimes, attempt limits, session durations, recovery review procedures, and technical tools are defined in the implementation design.
 - Owner emergency recovery evidence and reviewing authority must be defined before launch.
 - Activation, recovery, and invitation links must remain usable across site releases until their intended expiration or revocation.
