@@ -1,12 +1,10 @@
 # Identity, User Accounts, and Authentication
 
 **Platform:** Azadi Mali (Financial Freedom)
-**Document date:** 2026-10-07
 **Status:** Approved — requirements; operational parameters remain to be specified.
 **Owner:** Product Owner
-**Last reviewed:** 2026-10-08
 **Scope:** Registration, activation, authentication, environment switching, account recovery, and initial owner setup.
-**Open questions:** Exact code/link lifetimes, attempt limits, session durations, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
+**Open questions:** Exact code/link lifetimes, attempt limits, session durations, registration reminder schedule and limits, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
 **Implementation status:** Not verified. Approval of these requirements does not establish implementation, testing, or deployment.
 **Prerequisites:** [Actors, Roles, and Access](ACTORS_ROLES_AND_ACCESS.md) and [Platform vision and Version 1 scope](../product/PRODUCT_VISION.md).
 **Requirement identifiers:** Each numbered section is a stable requirement group, `AUTH-001` through `AUTH-023`; its subordinate rules belong to that group. These IDs must be preserved and used when linking future decisions, tasks, and acceptance tests.
@@ -72,11 +70,25 @@ Process:
 
 Rules:
 
-- In this version, platform email verification is required for both registration routes, including social registration.
+- Platform email verification is required for both registration routes, including social registration.
 - Names and other provider-supplied information can be corrected and must not be treated as definitive proof of legal identity.
 - The social provider used during registration is linked as a sign-in method. It does not need to be enabled again afterward.
 - Social registration does not require a local password. The person may add a local password later after secure reauthentication.
 - The provider's stable account identifier is used for the connection; email alone is not the linking key.
+
+### 2.3. Incomplete Registration and Completion Reminders
+
+- A person who has started registration but has not completed the required steps remains in an incomplete-registration state and must not be treated as an active customer.
+- The system sends automatic email reminders to complete registration. The exact schedule and maximum number of reminders are configurable operational parameters to be finalized; 24 and 48 hours after registration starts are proposed initial timings, not fixed approved values.
+- An authorized administrator may manually trigger the same reminder process from incomplete-registration management.
+- Automatic and manual reminders share delivery logic, resend limits, and duplicate-send protection. The administrator must see the last reminder time before sending another.
+- Immediately before dispatch, the system must check that registration is still incomplete and eligible for a reminder. Scheduled reminders must be canceled when registration is completed.
+- Reminders direct the person to their remaining registration step without repeating completed steps unnecessarily. Continuation links must not bypass email verification, MFA enrollment, or other security requirements. Expired verification steps require fresh valid verification.
+- Reminder messages are operational registration messages and must not contain promotional content.
+- Authorized administrators can view reminder counts, last-send time, automatic/manual origin, sending administrator where applicable, pending/sent/failed outcomes, and confirmed delivery only when supported by reliable provider evidence.
+- Reminder history records the remaining registration steps at sending time, subsequent registration progress, and final completion time where applicable. Completion after a reminder must not be represented as proof that the reminder caused completion.
+- Retention and cleanup rules for abandoned registration attempts are to be defined separately; this requirement does not authorize automatic deletion.
+- Reminder visibility, manual sending, and access to registration information require explicit permissions and respect data scope.
 
 ## 3. Customer Profile Completion [AUTH-003]
 
