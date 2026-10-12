@@ -59,3 +59,7 @@ Existing supporting documents:
 ## Reading Order
 
 Start with the product vision, actors/access, identity and privacy baseline; then the applicable approved module and any completed prerequisites. Analyze each management/staff section separately before customer-facing sections. Read approved architecture/contracts and delivery criteria when they exist. Every new or changed specification must complete the privacy review in PRIV-020; unresolved legal launch blockers must remain explicit.
+
+## Access Assignment Location
+
+Version 1 User and Collaboration Management contains Customer Management, Collaborator Management and Role Management. Individual assignments, scopes and validity are administered in collaborator profiles with effective-access/source visibility. There is no separate Access Management menu; any future centralized review view requires its own approval.
