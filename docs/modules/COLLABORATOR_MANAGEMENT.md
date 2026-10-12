@@ -134,6 +134,12 @@ Before stopping a relationship, show affected grants and open courses, sessions,
 
 ## 10. Individual Profile — Roles and Access [COLLAB-010]
 
+This tab is the Version 1 authoritative operator interface for individual role assignments, scopes and validity. There is no separate Access Management menu. Invitation/registration and subsequent profile edits use the same assignment logic.
+
+Provide an **Effective Access and Sources** view in this tab: show permitted menus/operations, active source roles, direct/inherited paths, assignment-specific scopes, company/independent relationship source, validity and relevant restrictions. A permission with multiple sources must retain each source's scope; do not flatten them into unrelated broad access. Profile access does not grant visibility into unauthorized domain data. This view explains access; edits use the existing unified role/scope form. Full administrative policy and owner protection remain explicit.
+
+A future centralized access-review screen is only a deferred possibility, not an approved Version 1 requirement.
+
 Table: role, scope, state (scheduled/active/suspended/expired), start and optional end; show **No end date** when absent.
 
 One **Edit Roles and Access** form shows multiple checkboxes, per-role scope/start and optional end toggle, with Save/Cancel. Show existing assignments and expiry settings accurately; a new optional end is off by default.
