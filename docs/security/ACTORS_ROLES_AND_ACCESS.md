@@ -64,7 +64,7 @@ The following safeguards are mandatory and must be implemented and tested:
 
 ### 5.2. Business Manager
 
-Business Manager administers business activities within the authority delegated by Platform Owner.
+Business Manager has the same full operational platform access as Platform Owner across all sections and menus. The sole authority boundary is categorical protection of Platform Owner: Business Manager cannot directly or indirectly restrict, suspend, deactivate, delete, replace or take over the owner or ownership. Full access remains subject to law, secure verification, retention and process integrity, and does not expose authentication secrets. Protected ownership transfer/recovery remains separate.
 
 Platform Owner and Business Manager are distinct responsibilities but may be held by the same person.
 
@@ -92,9 +92,9 @@ The system starts with the following roles. Detailed permissions for each role w
 | Finance Officer / Accountant | Authorized accounting and financial activities. |
 | Customer | Use of services and management of their own information. |
 
-All ordinary working roles, including Business Manager, may have multiple holders; an existing holder does not prevent another assignment. Initial working roles are configurable defaults, not hard-coded role definitions. An authorized administrator may edit, copy or deactivate them and create new roles.
+All ordinary working roles, including Business Manager, may have multiple holders; an existing holder does not prevent another assignment. Customer is a fixed baseline outside editable work-role administration. Initial work roles are configurable defaults, not hard-coded role definitions. Store their approved initial templates separately from administrator-edited operational definitions. New custom roles start from a selected permitted system template or existing role configuration rather than requiring a blank permission setup; copied roles are independent except for explicitly retained live inheritance. An authorized administrator may edit, copy or deactivate them and create new roles.
 
-Platform Owner is subject to the safeguards in section 5.
+Platform Owner is subject to the safeguards in section 5. Owner and Business Manager retain full protected administrative access across new platform sections; this policy cannot be copied into custom roles. Ordinary role/template updates do not silently overwrite settings or grant new permissions. See [Role Management](../modules/ROLE_MANAGEMENT.md) for forms, defaults, comparisons and lifecycle.
 
 ## 7. Operational Permissions
 
@@ -130,7 +130,7 @@ Inheritance rules:
 - Changing a role's permissions also affects roles that inherit from it.
 - A copied role is independent: changes to the original do not change the copy's directly assigned permissions. Any inheritance relationships retained in the copy must be explicit and visible.
 
-A person's effective authority is obtained by combining permissions from active roles, including inherited permissions, and then applying data scope and process rules.
+A person's effective authority combines valid direct/inherited assignments, with each permission's applicable assignment scope kept attached; a broad scope from one domain must not widen an unrelated domain. Apply protected administrative policy and process rules. Disabled roles do not supply permissions through inheritance. Reactivation must review restored direct/inherited access without reviving invalid assignments.
 
 ## 9. Data Access Scopes
 
@@ -152,7 +152,7 @@ A permission does not override process rules. For example, changing a finalized 
 ### 10.1. Who May Administer Roles
 
 - Platform Owner may create, copy, edit and deactivate roles; change permissions and scopes; and assign or revoke roles.
-- Business Manager has the same capabilities for working roles within the business they manage, subject to delegated authority.
+- Business Manager has the same full work-role administration capabilities, subject to categorical owner protection and legal/process safeguards.
 - Other people do not have this authority by default. Limited delegation requires an explicit decision and assignment by Platform Owner.
 - Business Manager cannot create or edit a role to obtain Platform Owner authority for themselves or another person.
 
@@ -164,7 +164,8 @@ Within their authorized scope, an administrator may:
 - Change a working role's name, description and permissions.
 - Configure inheritance relationships and authorized scopes.
 - Assign or revoke roles.
-- Deactivate a role.
+- Deactivate or reactivate a work role after impact review.
+- Delete an unused custom role only if it has no usage history or dependencies; default/used roles are deactivated instead.
 - Set an expiry date on a role assignment.
 
 Administrators may delegate only permissions and scopes that they are authorized to delegate.
