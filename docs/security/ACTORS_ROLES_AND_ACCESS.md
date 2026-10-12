@@ -54,12 +54,12 @@ Selecting an environment grants no additional permission. The system must check 
 
 Platform Owner has the highest administrative and business authority across the platform. Their access is not less than that of Business Manager and includes Business Manager's authority.
 
-Platform Owner can manage roles, delegate access and manage platform domains.
+There is exactly one active Platform Owner after initial setup. The role is not assignable through collaborator registration or ordinary role checkboxes. Initial setup and controlled recovery follow the identity specification; ownership transfer is a separate protected process that replaces the active assignment without creating a second active owner or leaving no owner. Platform Owner can manage roles, delegate access and manage platform domains.
 
 The following safeguards are mandatory and must be implemented and tested:
 - Business Manager and ordinary administrators cannot remove, restrict or replace Platform Owner.
 - Ownership assignment or transfer is a separate operation under the owner's authority.
-- Removing or deactivating the last active Platform Owner is prohibited.
+- Deleting or deactivating the sole active Platform Owner through ordinary account/collaborator/company operations is prohibited.
 - Full authority does not permit bypassing data integrity rules or making changes without audit records. It does not override purpose limitation, lawful processing, data minimization or statutory retention.
 
 ### 5.2. Business Manager
@@ -92,7 +92,7 @@ The system starts with the following roles. Detailed permissions for each role w
 | Finance Officer / Accountant | Authorized accounting and financial activities. |
 | Customer | Use of services and management of their own information. |
 
-Initial working roles are configurable defaults, not hard-coded role definitions. An authorized administrator may edit, copy or deactivate them and create new roles.
+All ordinary working roles, including Business Manager, may have multiple holders; an existing holder does not prevent another assignment. Initial working roles are configurable defaults, not hard-coded role definitions. An authorized administrator may edit, copy or deactivate them and create new roles.
 
 Platform Owner is subject to the safeguards in section 5.
 
@@ -194,6 +194,8 @@ Version 1 uses roles, inheritance and scopes for restrictions. Independent perso
 - Stopping working access does not necessarily delete the person's customer account or information.
 
 Execution details are defined in the [Identity, Accounts and Authentication specification](IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md).
+
+Company-associated assignments must identify their company/relationship source, independently of unrelated assignments. Suspending or ending a company collaboration affects only dependent grants, not customer access or independent work. See [Collaborator Management](../modules/COLLABORATOR_MANAGEMENT.md) for checkbox-based assignment, profiles, invitations and permission defaults.
 
 ## 13. Access Enforcement and Auditing
 
