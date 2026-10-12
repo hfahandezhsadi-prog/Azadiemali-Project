@@ -34,6 +34,7 @@ Requirements have stable IDs, such as CONS-001. Link requirements to relevant de
 | 2A | [Identity, accounts and authentication](security/IDENTITY_ACCOUNTS_AND_AUTHENTICATION.md) | Approved; operational parameters and recovery procedures require implementation analysis |
 | 2B | [Data protection and privacy — Germany](security/DATA_PROTECTION_AND_PRIVACY.md) | Approved baseline; applicability, operating decisions and evidence remain open |
 | 3 | [Customer Management](modules/CUSTOMER_MANAGEMENT.md) | Approved; source-domain definitions and legal/operating parameters remain open |
+| 3A | [Collaborator and Partner Company Management](modules/COLLABORATOR_MANAGEMENT.md) | Approved; operating parameters and legal launch evidence remain open |
 | 4 | Remaining management and staff modules, then customer-facing sections | Separate theoretical analysis and approval required |
 | 5 | Overall architecture, module boundaries and relevant user journeys | Planned; detailed decisions not yet approved |
 | 6 | Data, API, event and integration contracts | Planned; not yet created |
