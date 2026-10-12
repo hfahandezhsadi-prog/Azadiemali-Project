@@ -22,6 +22,16 @@ Read README.md and docs/README.md, then the relevant product requirements, archi
 - Never commit credentials, tokens, personal customer records or private operational evidence. This repository is public.
 - Follow the user's explicit task scope. Do not deploy, apply production migrations or change external systems without authorization.
 
+## Mandatory Permission Review for Every Module
+
+For every new or amended module analysis, explicitly propose and document each relevant role's access: visible panels/menus/tabs, permitted operations, record/field scope, sensitive-action authority and export/history permissions. Include a concrete default-role matrix and distinguish enabled defaults, absent defaults, explicitly delegated permissions and capabilities awaiting domain analysis. Do not finalize a module with only a generic reference to roles.
+
+Reconcile the proposal with the authoritative actors/access, identity, customer, collaborator and privacy specifications. Identify contradictions to the Product Owner before finalizing; update approved source definitions and dependent documents coherently after approval. Assess changes to role templates and affected existing/custom roles. Software updates must not silently overwrite administrator settings or expand ordinary role permissions.
+
+The Product Owner's approved direction for the ongoing Role Management analysis is full operational access for Platform Owner and Business Manager throughout the platform, with Business Manager categorically unable to restrict, suspend, disable, remove or take over Platform Owner directly or indirectly. Align the final role specification and prerequisite documents with this direction; do not infer permission to bypass law, security verification or protected owner-recovery procedures. Clarify treatment of new modules for these administrative roles during final analysis.
+
+Catalog and Pricing Coordinator must be considered for the planned service, education and product definition section as well as catalog/pricing. Detailed permissions for that section require its own analysis; this note is not an implemented capability.
+
 ## Privacy review
 
 Apply [Data Protection and Privacy — Germany](docs/security/DATA_PROTECTION_AND_PRIVACY.md) to every new or amended specification. Complete PRIV-020 applicability, source, decision and evidence review. Recheck current official EU/German law and regulator guidance where relevant. Do not present approved design as legally certified or technically implemented. Do not override legal retention, lawful communication eligibility or purpose-based access through administrator confirmation. Keep unresolved legal blockers explicit before affected real-data launch.
