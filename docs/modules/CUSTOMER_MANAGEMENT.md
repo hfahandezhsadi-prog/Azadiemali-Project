@@ -13,7 +13,8 @@ The parent section is **User and Collaboration Management** (مدیریت کار
 1. Customer Management.
 2. Collaborator Management.
 3. Role Management.
-4. Access Management.
+
+Version 1 has no separate Access Management menu. Work-role assignments, scopes and validity are managed through Collaborator Management.
 
 Collaborators include employees, consultants, instructors, outside individuals and companies. The external subgroup label is **Specialists and Partner Companies** (متخصصان و شرکت‌های همکار). Its detailed specification follows separate analysis.
 
