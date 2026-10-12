@@ -224,3 +224,7 @@ Role changes and access revocations must be reflected in system authorization. T
 ## Implementation Status
 
 This is an approved design specification. It does not claim that the model has been implemented or deployed.
+
+## Self-Service and Messaging Permissions
+
+[My Account](../modules/MY_ACCOUNT_AND_SETTINGS.md) defines own information/security, preferences, rights requests and purchases; these do not confer central administration. [Messaging](../modules/MESSAGING_AND_NOTIFICATIONS.md), MSG-008, defines approved role defaults for scoped contact discovery, colleague/customer sending, notices, support view/reply/assignment/internal notes and supervisory access. Customer sending is restricted to System Support. Support is a queue operated with individual accounts, not a shared identity. Apply existing role-update review rules; new permissions are not silently added to ordinary/custom roles. Full administrative access retains the privacy baseline's purpose/necessity constraints for correspondence inspection.
