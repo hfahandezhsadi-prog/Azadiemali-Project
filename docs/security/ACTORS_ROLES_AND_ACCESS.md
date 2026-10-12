@@ -149,6 +149,8 @@ A permission does not override process rules. For example, changing a finalized 
 
 ## 10. Role and Access Administration
 
+Version 1 manages reusable definitions in [Role Management](../modules/ROLE_MANAGEMENT.md) and individual assignments/scopes/validity in [Collaborator Management](../modules/COLLABORATOR_MANAGEMENT.md). No separate Access Management menu is included. Collaborator profiles expose effective access and its scoped sources through the same authorization model; a future centralized review view is not a current commitment.
+
 ### 10.1. Who May Administer Roles
 
 - Platform Owner may create, copy, edit and deactivate roles; change permissions and scopes; and assign or revoke roles.
