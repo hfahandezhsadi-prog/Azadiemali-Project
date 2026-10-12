@@ -93,6 +93,8 @@ Rules:
 
 ## 3. Customer Profile Completion [AUTH-003]
 
+The restricted registration-completion interface is the My Information form in [My Account](../modules/MY_ACCOUNT_AND_SETTINGS.md), with Save and Continue leading to required security enrollment. It does not open normal portal access prematurely.
+
 First name, last name, and a verified email address must be present before normal access is granted.
 
 | Additional information | Requirement |
@@ -367,6 +369,8 @@ For a person who is both a customer and a staff member:
 The system must check authorization for every operation and information access. Changing environments, manipulating a page address, or sending a request directly must not bypass access restrictions.
 
 ## 16. Reauthentication for Sensitive Operations [AUTH-016]
+
+Self-service controls are specified in [My Account](../modules/MY_ACCOUNT_AND_SETTINGS.md). Customers may edit their basic names; collaborators, including shared customer-collaborator accounts in either environment, submit name-correction requests for authorized review. Email/mobile changes remain user-initiated secure verified operations; lost factors require recovery. These UI rules do not weaken this document's authentication/recovery requirements.
 
 Secure reauthentication is required for:
 
