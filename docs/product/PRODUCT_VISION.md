@@ -106,7 +106,7 @@ Processes, documents and responsibilities require dedicated analysis.
 
 Manage customers, employees, consultants, instructors and collaborating individuals or companies, together with their information and relationship to the business.
 
-The menu contains Customer Management, Collaborator Management, Role Management and Access Management. Collaborator Management includes employees and external Specialists and Partner Companies. [Customer Management](../modules/CUSTOMER_MANAGEMENT.md) is approved; remaining sections require their own analysis. Contacts/leads with neither an account nor a purchase remain in CRM, including their list/search, and are excluded from customer-management results.
+The menu contains Customer Management, Collaborator Management and Role Management. Collaborator Management includes employees and external Specialists and Partner Companies. [Customer Management](../modules/CUSTOMER_MANAGEMENT.md) is approved; Collaborator Management and Role Management are also approved in their linked specifications. Individual access assignments are managed in collaborator profiles; Version 1 has no separate Access Management menu. A future cross-platform access-review view remains outside the current commitment. Contacts/leads with neither an account nor a purchase remain in CRM, including their list/search, and are excluded from customer-management results.
 
 ### 5.2. Product Catalog and Pricing
 
