@@ -9,7 +9,7 @@
 
 ## 1. Purpose and Concepts [ROLE-001]
 
-Role Management defines reusable work-role permissions. Individual assignments, record scope, company/relationship source and start/end timing use the approved Collaborator Management and Access Management paths; do not duplicate conflicting assignment forms here.
+Role Management defines reusable work-role permissions. Version 1 has no separate Access Management menu. Individual assignments, record scope, company/relationship source and start/end timing use the approved Collaborator Management registration/profile paths; do not duplicate conflicting assignment forms here.
 
 | Concept | Meaning |
 |---|---|
