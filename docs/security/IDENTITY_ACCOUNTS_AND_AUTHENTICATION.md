@@ -4,7 +4,7 @@
 **Status:** Approved — requirements; operational parameters remain to be specified.
 **Owner:** Product Owner
 **Scope:** Registration, activation, authentication, environment switching, account recovery, and initial owner setup.
-**Open questions:** Exact code/link lifetimes, attempt limits, session durations, registration reminder schedule and limits, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
+**Open questions:** Other code/link lifetimes, attempt limits, session durations, registration reminder schedule and limits, manual recovery evidence and reviewing authority; see Sections 6.4 and 23. These must be resolved before the affected implementation is launched.
 **Implementation status:** Not verified. Approval of these requirements does not establish implementation, testing, or deployment.
 **Prerequisites:** [Actors, Roles, and Access](ACTORS_ROLES_AND_ACCESS.md) and [Platform vision and Version 1 scope](../product/PRODUCT_VISION.md).
 **Privacy baseline:** [Data protection and privacy requirements — Germany](DATA_PROTECTION_AND_PRIVACY.md) applies to all collection, communications, telemetry, recovery and lifecycle operations.
@@ -145,6 +145,8 @@ Inviters may grant only roles and scopes they are authorized to delegate. Public
 
 The authorized administrator enters required information in advance. The person may add approved optional profile information later. A mandatory SMS channel does not automatically require an employee's private phone: assess necessity and employment-law conditions and provide an appropriate employer-provided number/device or approved operational arrangement where needed. Contact data must not be reused for marketing merely because it supports activation.
 
+A supplied mobile is mandatory for every individual collaborator; the form does not classify it as private/company-owned. Company contact mobiles are independent and never substitute automatically for the individual's activation/recovery number. Company records have no login and no SMS activation. The privacy baseline's employment necessity and suitable-channel assessment still applies.
+
 ### 5.3. Initial Activation
 
 1. An authorized administrator records the person's information, roles, and scopes.
@@ -167,6 +169,10 @@ Rules:
 - Links and codes must be single-use, expire, and have limits on attempts and resends.
 - An authorized person may issue a replacement invitation after expiration. The replaced invitation must no longer be usable.
 - Invitation issuance, cancellation, resending, and completion must be audited.
+
+Invitation links expire 48 hours after sending; activation SMS codes expire after 5 minutes. SMS expiry alone does not require a replacement email invitation. Administrator link replacement is available only for incomplete activation with an expired link, and invalidates the preceding link. Cancelled invitations require a separately authorized new invitation. Valid completed steps are not repeated unnecessarily.
+
+Tokens must be cryptographically unpredictable, stored as secure validation representations, purpose/person-bound, and consumed once even under concurrent use. Prevent leakage through logs/analytics and use trusted HTTPS links. Restricted activation-session lifetimes, continuation and resend/attempt limits must be specified before launch; exchanging a link never grants working access. See [Collaborator Management](../modules/COLLABORATOR_MANAGEMENT.md) for detailed invitation requirements.
 
 ### 5.4. Existing Customer Accounts
 
@@ -202,9 +208,9 @@ There must be no public default username/password, shared owner credential, or p
 - The owner enrolls an authenticator app and securely retains single-use recovery codes outside the account.
 - The owner registers at least one backup passkey, preferably on a physical security key.
 - Secure backup access must not depend exclusively on the owner's email account or mobile number.
-- Additional owners and ownership transfers follow the protective rules in the Actors, Roles, and Access specification.
+- Exactly one active Platform Owner exists after setup. Additional simultaneous owners are not supported. A separately protected ownership transfer replaces that assignment under the Actors, Roles, and Access safeguards; ordinary collaborator forms cannot assign it.
 - Business Managers and ordinary administrators must not delete, restrict, replace, or take over the owner through invitations or recovery.
-- The last active owner must not be deleted or deactivated.
+- The sole active owner must not be deleted or deactivated through ordinary account management.
 - Full authority does not permit bypassing data-integrity rules or making unaudited changes.
 
 ### 6.3. Loss of Access to the Owner's Email
@@ -488,7 +494,7 @@ Rules:
 - Sign-in, registration, activation, and recovery page layouts are defined in the UI specification.
 - Each module defines its own permissions and sensitive operations.
 - Data retention, lawful collection/communications, individual rights and deletion are governed by the [privacy baseline](DATA_PROTECTION_AND_PRIVACY.md). Category-specific operating decisions must be completed before affected launch.
-- Exact link/code lifetimes, attempt limits, session durations, recovery review procedures, and technical tools are defined in the implementation design.
+- Invitation-link lifetime is 48 hours and activation-SMS lifetime is 5 minutes under Section 5. Other link/code lifetimes, attempt limits, resend limits, session durations, recovery review procedures and technical tools require implementation analysis. The invitation lifetime does not change the still-proposed customer reminder schedule.
 - Owner emergency recovery evidence and reviewing authority must be defined before launch.
 - Activation, recovery, and invitation links must remain usable across site releases until their intended expiration or revocation.
 - Implementation details must not weaken the principles or approved decisions in this document.
