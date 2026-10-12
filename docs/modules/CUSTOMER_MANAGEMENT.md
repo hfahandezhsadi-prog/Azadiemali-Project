@@ -162,7 +162,7 @@ Permissions must remain separate for list access, incomplete registrations, inac
 | Initial role | Default access in this module |
 |---|---|
 | Platform Owner | Required platform-scope administration, subject to purpose, legal and owner safeguards. |
-| Business Manager | Customer business management in authorized business scope; no alteration of protected ownership. |
+| Business Manager | Full operational access to this and all other platform sections, equivalent to Platform Owner; no direct or indirect restriction, suspension, removal or takeover of protected ownership. Legal/process safeguards remain. |
 | User and Collaboration Coordinator | Three workspace lists, identity/account-state and relevant administrative history; basic/contact administration, reminders, reset initiation, customer disable/restore. No whole-account suspension/restoration or session revocation by default; explicit owner delegation required. |
 | Sales and Customer Relations Coordinator | Necessary customer identity plus Academy, consultation and service summaries for assigned scope; authorized registration reminders. No account-security administration by default. |
 | Academy Coordinator | Necessary customer identity and Academy information within scope. |
