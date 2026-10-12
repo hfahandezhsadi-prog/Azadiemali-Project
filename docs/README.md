@@ -36,6 +36,8 @@ Requirements have stable IDs, such as CONS-001. Link requirements to relevant de
 | 3 | [Customer Management](modules/CUSTOMER_MANAGEMENT.md) | Approved; source-domain definitions and legal/operating parameters remain open |
 | 3A | [Collaborator and Partner Company Management](modules/COLLABORATOR_MANAGEMENT.md) | Approved; operating parameters and legal launch evidence remain open |
 | 3B | [Role Management](modules/ROLE_MANAGEMENT.md) | Approved application requirements; source-domain permissions and operating parameters remain to be completed |
+| 3C | [My Account, Profile Settings and My Purchases](modules/MY_ACCOUNT_AND_SETTINGS.md) | Approved; stated security/closure/domain parameters remain open |
+| 3D | [Messaging, Notifications and Support Inbox](modules/MESSAGING_AND_NOTIFICATIONS.md) | Approved; retention and supervisory legal/operating conditions remain open |
 | 4 | Remaining management and staff modules, then customer-facing sections | Separate theoretical analysis and approval required |
 | 5 | Overall architecture, module boundaries and relevant user journeys | Planned; detailed decisions not yet approved |
 | 6 | Data, API, event and integration contracts | Planned; not yet created |
