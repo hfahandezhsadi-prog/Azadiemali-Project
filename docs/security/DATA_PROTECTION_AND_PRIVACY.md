@@ -150,6 +150,16 @@ Strictly necessary terminal operations may qualify for the statutory exception. 
 
 Source: [TDDDG §25](https://www.gesetze-im-internet.de/ttdsg/__25.html).
 
+### Internal messaging and employee correspondence
+
+[Messaging](../modules/MESSAGING_AND_NOTIFICATIONS.md) contains private/public messages, support queues/internal notes, files and generic email alerts. Classify legal basis and necessity by actual purpose; public/private classification is not a marketing exemption. Alerts exclude private body/subject/files, use no opening trackers and cease scheduled reminders after reading. The approved 5-minute/3-day/7-day sequence is distinct from customer-registration reminders, whose schedule remains undecided.
+
+Full administrative authority does not authorize indiscriminate correspondence inspection. Supervisory review requires documented lawful purpose/necessity, an authorized read-only route, reason, fresh authentication, access audit and appropriate employee transparency. Define applicable employment conditions before enabling it; do not use security or support histories for undisclosed performance monitoring.
+
+Set separate retention schedules for work/customer conversations, public notices, drafts, temporary uploads, files and supervisory logs. Internal-note UI restrictions do not create a blanket exception to statutory access rights. Requests through Support enter the existing rights workflow; name corrections cannot be refused arbitrarily. Closing customer access is separate from erasure and must preserve independent work and lawful records.
+
+File scanning/content processing providers also require role/contract/transfer assessment; do not send private attachments to unapproved public scanning services. Preview/download authorization and backup disposal remain mandatory.
+
 ## 15. Security and Operational Measures [PRIV-015]
 
 Risk-appropriate technical and organizational measures must cover confidentiality, integrity, availability and recovery. The platform requires encrypted transport, appropriate protection at rest, key/secret management, least privilege, scoped MFA, secure sessions, vulnerability/dependency management, backup restoration tests, incident response and access reviews. Exact technology and measurable parameters follow architecture analysis.
