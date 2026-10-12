@@ -240,7 +240,7 @@ Company deletion is reserved to Owner/Business Manager, with dependency review, 
 | Role | Default module authority |
 |---|---|
 | Platform Owner | Required platform administration subject to legal purpose, minimization and owner safeguards |
-| Business Manager | Individual/company administration, including reserved deletion, within delegated business scope; no ownership changes |
+| Business Manager | Full operational platform access, including individual/company administration and reserved deletion, equivalent to Owner; no direct/indirect restriction, suspension, deletion or takeover of protected Owner |
 | User and Collaboration Coordinator | Records, invitations/resends, edits, relationship-status management and password-reset initiation; no deletion |
 | Relevant domain coordinators | Related collaborator information and work summaries within their own domain/scope; no default account-security administration |
 | Instructor / Consultant / Specialist Service Provider | No central administration access by default |
