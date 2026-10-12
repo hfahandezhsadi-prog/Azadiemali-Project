@@ -44,6 +44,14 @@ Use stable internal person/account identifiers to reference separate domain reco
 
 Support corrections at the authoritative source and propagate them appropriately. Historical accounting records may need an auditable correction rather than overwriting issued documents. Financial data is confidential but not automatically Article 9 special-category data. Free text and uploaded documents can reveal such data; assess necessity, Article 9 conditions and safeguards before permitting that processing. Article 10 criminal-conviction data requires its own legal assessment.
 
+### Partner company and representative information
+
+The [Collaborator Management specification](../modules/COLLABORATOR_MANAGEMENT.md) distinguishes legal entities from the people linked to them. Legal-entity information alone is not automatically personal data, but sole-trader information, directors/authorized legal representatives, named contacts and person-related emails/mobiles can be. Do not exempt company profiles from the GDPR review as a whole.
+
+Collect legal name/form and necessary contacts for the actual partner relationship; collect addresses, legal-representative names, register data and VAT identifiers when applicable to the legal form and process. Do not automatically demand all fields, private director contacts or identity-document copies. Bank/IBAN and finance-specific tax data belong only in Finance when needed. Company legal-representative details do not create login accounts.
+
+[GmbHG §35a](https://www.gesetze-im-internet.de/gmbhg/__35a.html) concerns relevant business letters; [UStG §14](https://www.gesetze-im-internet.de/ustg_1980/__14.html) concerns invoices; [DDG §5](https://www.gesetze-im-internet.de/ddg/__5.html) concerns applicable service-provider disclosures. These are context-specific obligations, not a universal mandate for a partner-record registration form. Consider legal form, jurisdiction and actual purpose. Assess Article 14 notice duties when personal information is supplied by companies/administrators or taken from registers, including applicable timing and documented exceptions.
+
 ## 5. Transparency and Language [PRIV-005]
 
 Provide understandable notices at collection, including registration, invitations, uploads, forms and relevant integrations. For indirect collection assess Article 14 notice duties, timing and exceptions.
@@ -64,7 +72,9 @@ Source: [DSK — SDM and implementation guidance](https://www.datenschutzkonfere
 
 ## 7. Authentication and Employment [PRIV-007]
 
-Apply the approved identity specification while minimizing contact and security telemetry. SMS activation/recovery uses a verified suitable number; it must not impose use of an employee's private phone without a necessity and employment-law assessment. Provide an appropriate employer-provided channel/device or approved operational arrangement where needed. Employee consent must not be assumed freely given merely because a form is signed.
+Apply the approved identity specification while minimizing contact and security telemetry. The approved collaboration model requires a supplied mobile for each individual collaborator and a separate company contact mobile. No private/company ownership classification field is collected. A company definition has no login and does not trigger SMS verification; the contact must not be presented as verified. Individual activation/recovery uses the individual's own registered channel, never an automatically copied company number. Necessity and legal basis for the required fields must still be documented; a platform policy is not a statutory obligation.
+
+SMS activation/recovery uses a verified suitable number; it must not impose use of an employee's private phone without a necessity and employment-law assessment. Provide an appropriate employer-provided channel/device or approved operational arrangement where needed. Employee consent must not be assumed freely given merely because a form is signed.
 
 Passkey biometric/PIN verification occurs locally at the authenticator. The platform must not collect fingerprint or facial templates for this feature. Protect credential identifiers and public keys as account data. TOTP enrollment secrets, recovery codes, setup links and SMS codes require restricted protection and must never appear in ordinary logs, analytics or manager screens.
 
@@ -95,6 +105,8 @@ Deletion must cover linked stores, caches, search indexes, analytics copies, fil
 Sources: [HGB §257](https://www.gesetze-im-internet.de/hgb/__257.html), [AO §147](https://www.gesetze-im-internet.de/ao_1977/__147.html).
 
 ## 10. Administrative Deletion and Dependencies [PRIV-010]
+
+Collaborator/company deletion follows the same lawful-preservation rules: display dependencies, revoke only relevant work grants, preserve independent/customer relationships, and do not orphan financial/source records. Administrative deletion is reserved to Platform Owner or Business Manager; retention-bound audit disposal and individual-rights handling remain separate processes. See [Collaborator Management](../modules/COLLABORATOR_MANAGEMENT.md).
 
 Customer full deletion is reserved to Platform Owner or Business Manager, within scope and owner safeguards. Display relevant dependencies, shared work effects, open cases, payments, refunds, debts, records subject to retention and consequences. Require explicit reviewed confirmation, reason and secure reauthentication.
 
